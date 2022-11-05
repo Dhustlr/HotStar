@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #131A28;
+        }
+
+        .main {
+            /* border: 2px solid black; */
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            background-color: #131A28;
+
+        }
+
+        .main>div:nth-child(1) {
+            width: 42%;
+            /* border: 2px solid blue; */
+            display: flex;
+            color: white;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main>div:nth-child(1)>p+img {
+            width: 15%;
+            height: 30px;
+        }
+
+        .main>div:nth-child(2) {
+            width: 30%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+        }
+
+        input {
+            border: none;
+            height: 30px;
+            width: 50%;
+        }
+
+        button {
+            background-color: #1F80E0;
+            border: none;
+            color: white;
+            padding: 6px;
+            border-radius: 5px;
+        }
+
+        #slideshow {
+            width: 100%;
+
+            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        #slideshow>img {
+            width: 100%;
+            height: 300px;
+        }
+
+        #movsec {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+        }
+
+        #movies {
+            width: 29%;
+            /* border: 2px solid red; */
+            /* height: 300px; */
+            overflow: scroll;
+
+        }
+
+        #movies>div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        #movies>div>img {
+            width: 20%;
+            height: 100px;
+        }
+
+        /* #movies::-webkit-scrollbar {
+            /* width: 8px; */
+        /* background-color: #131A28; */
+        /* } */
+
+        #movies::-webkit-scrollbar-track {
+            /* box-shadow: inset 0 0 6px lightgrey; */
+
+        }
+
+        /* #movies::-webkit-scrollbar-thumb {
+            background-color: red;
+            outline: none;
+            border-radius: 10px;
+        }  */
+        #movies::-webkit-scrollbar {
+            width: 10px;
+            background-color: #131A28;
+        }
+
+        #movies::-webkit-scrollbar-thumb {
+            border-radius: 25px;
+            /* background-color: black; */
+            background: linear-gradient(black, grey);
+        }
+
+        #nav {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        }
+
+        #nav:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.995) 0px -12px 30px, rgb(255, 255, 255) 0px 4px 6px, rgb(255, 255, 255) 0px 12px 13px, rgb(255, 255, 255) 0px -3px 5px;
+            cursor: pointer;
+        }
+
+        #container {
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        #container>div>img {
+            height: 40%;
+        }
+
+        #container>div>h2 {
+            color: white;
+        }
+
+        #container>div>p {
+            color: white;
+        }
+
+        .slides-inner {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            transform: translate3d(0, 0, 0);
+            transition: 1000ms;
+        }
+
+        .slide-show {
+            overflow: hidden;
+            position: relative;
+        }
+
+        #slides {
+            /* border: 2px solid red; */
+            width: 1200px;
+            height: 60vh;
+            margin: auto;
+            margin-top: 2%;
+        }
+
+        #slides img {
+            height: 60vh;
+            width: 100%;
+        }
+        a{
+            color: white;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        div>p{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <a href="index.html"><img src="logo.PNG" alt=""></a>
+            <p>TV</p>
+            <p>Movies</p>
+            <p>Sports</p>
+            <p>Disney+</p>
+            <img src="kids.PNG" alt="">
+            <a href="trending.html">Trending</a>
+        </div>
+        <div>
+            <input oninput="debounce(main,2000)" type="text" id="query">
+            <button>Subscribe</button>
+            <p>LOGIN</p>
+
+        </div>
+
+    </div>
+    <div id="movsec">
+        <div></div>
+        <div id="movies"></div>
+    </div>
+    <!-- <div id="slideshow">
+        Show Slideshow here
+
+    </div> -->
+    <div id="slides" class="slide-show">
+        <div class="slides-inner">
+            <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SpiderNoWayHomeRevised_Launch/2a2b2cc2-e20b-492f-b53b-984627f3eb4e._UR3000,600_SX3000_FMwebp_.jpeg"
+                alt="">
+            <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_LOTRTrilogy_LaunchV2/aff5e242-51fd-4e52-b726-cf5966cfc551._UR3000,600_SX3000_FMwebp_.jpeg"
+                alt="">
+            <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_TVOD_TheBadGuys/269b2768-5b5c-408c-8bc1-a6821e3e6967._UR3000,600_SX3000_FMwebp_.jpeg"
+                alt="">
+            <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_TVOD_Uncharted/90097e63-ec24-4589-a7d6-922e413ca5c9._UR3000,600_SX3000_FMwebp_.jpeg"
+                alt="">
+            <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_CROW_UN_MoonFall_LP/95c92bb2-611c-463b-87b6-9787891bdc94._UR3000,600_SX3000_FMwebp_.jpeg"
+                alt="">
+            <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SamratPrithviraj_Launch/c7358dc2-f7a7-4abc-85a2-77bb68b3a449._UR3000,600_SX3000_FMwebp_.jpeg"
+                alt="">
+
+        </div>
+    </div>
+    <div id="container"></div>
+
+</body>
+
+</html>
+<script>
+    // for slideshow
+    let movies = [
+        {
+            image_url: "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_TheTerminalListS1_Launch/cb625522-5dc1-4890-b72b-15caba38dd66._UR3000,600_SX1500_FMwebp_.jpeg",
+        },
+        {
+            image_url: "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_CinderellaLaunch/f77f02e4-b87a-46d3-be58-e489de5de33b._UR3000,600_SX1500_FMwebp_.jpeg"
+        },
+        {
+            image_url: "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_CROW_UN_MoonFall_LP/95c92bb2-611c-463b-87b6-9787891bdc94._UR3000,600_SX1500_FMwebp_.jpeg"
+        },
+        {
+            image_url: "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_LOTRTrilogy_LaunchV2/aff5e242-51fd-4e52-b726-cf5966cfc551._UR3000,600_SX1500_FMwebp_.jpeg"
+        },
+        {
+            image_url: "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Runway34_Launch/f5d62171-c4c6-49bb-98d5-efe15d6db49b._UR3000,600_SX1500_FMwebp_.jpeg"
+
+        }
+    ]
+
+  
+    function makeslideshow(slidesID) {
+        const slides = document.getElementById(slidesID);
+        const slidesInner = slides.querySelector('.slides-inner');
+        const images = slidesInner.querySelectorAll('img');
+
+        let index = 0
+
+        setInterval(function () {
+            index += 1;
+            if (index == images.length) {
+                index = 0
+            }
+            slidesInner.style.transform = `translate3d(${index * -1200}px,0,0)`
+        }, 3000)
+    }
+    makeslideshow('slides')
+
+    // slideshow end
+    // movie section start
+
+    async function main() {
+        let query = document.getElementById("query").value;
+        let data = await getData(query);
+        append(data);
+        append1(data);
+    }
+
+    async function getData(query) {
+
+        const url = `https://www.omdbapi.com/?s=${query}&apikey=4be70160`;
+        let res = await fetch(url);
+        let data = await res.json();
+        return data.Search
+    }
+    function append(data) {
+        
+        if (!data) {
+            return;
+        }
+        let cont = document.getElementById("movies")
+        cont.style.maxHeight = "55vh"
+       
+        let gg = document.getElementById("slides")
+        gg.style.display = "none"
+        cont.innerHTML = null;
+        data.forEach(function (el) {
+            let img = document.createElement("img")
+            img.src = el.Poster;
+            let p = document.createElement("p")
+            p.innerText = el.Title;
+            let div = document.createElement("div")
+            div.setAttribute("id", "nav")
+            div.addEventListener("click", function () {
+                localStorage.setItem("appmovie", JSON.stringify(el))
+                sendme()
+            })
+            div.append(img, p)
+            cont.append(div)
+        })
+    }
+    function sendme() {
+        window.location.href = "cont.html"
+    }
+    let id1;
+    function debounce(func, delay) {
+        if (id1) {
+            clearTimeout(id1);
+        }
+        id1 = setTimeout(function () {
+            func();
+        }, delay)
+    }
+
+
+    // append data
+
+    function append1(data) {
+        let container = document.getElementById("container")
+        container.innerHTML = null;
+        data.forEach(function (el) {
+            console.log(el)
+            let img = document.createElement("img")
+            img.src = el.Poster;
+            let h2 = document.createElement("h2")
+            h2.innerText = el.Title;
+            let p = document.createElement("p")
+            p.innerText = "Released year:" + el.Year;
+            let p2 = document.createElement("p")
+            p2.innerText = el.imdbID;
+            let imdb = document.createElement('p');
+            if (Number(el.imdbRating) > 8.5) {
+                let span = document.createElement('span');
+                span.innerText = 'Top Moive'
+                span.setAttribute('class', 'top')
+                // span.style.marginLeft='19px';
+
+                imdb.innerText = el.imdbRating;
+
+                imdb.append(span);
+
+                imdb.style.color = 'green';
+            }
+            else {
+                imdb.innerText = el.imdbRating;
+            }
+
+            let div = document.createElement("div")
+            div.append(img, h2, p, imdb)
+            container.append(div)
+
+        })
+    }
+</script>

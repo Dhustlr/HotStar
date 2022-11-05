@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+<style>
+    body{
+        background-color: #131A28;
+    }
+    .main {
+            
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            background-color: #131A28;
+        }
+
+        .main>div:nth-child(1) {
+            width: 40%;
+            /* border: 2px solid blue; */
+            display: flex;
+            color: white;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main>div:nth-child(1)>p+img {
+            width: 15%;
+            height: 30px;
+        }
+
+        .main>div:nth-child(2) {
+            width: 30%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+        }
+
+        input {
+            border: none;
+            height: 30px;
+            width: 50%;
+        }
+
+        button {
+            background-color: #1F80E0;
+            border: none;
+            color: white;
+            padding: 6px;
+            border-radius: 5px;
+        }
+    #slide{
+        /* border: 2px solid red; */
+        height: 350px;
+        width: 80%;
+        margin: auto;
+    }
+    #slide>img{
+        width:100%;
+        height: 100%;
+    }
+    #cont{
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: space-evenly;
+        width: 80%;
+        margin: auto;
+        height: 300px;
+        margin-top: 50px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 10px;
+    }
+    #cont1{
+        /* border: 2px solid red; */
+        width:30%;
+       
+    }
+    #cont1>img{
+        width:100%;
+        height: 100%;
+    }
+    #cont2{
+        /* border: 2px solid blue; */
+        width:50%;
+        text-align: center;
+        color: white;
+        font-family: poppins;
+    }
+    h4{
+        width: 20%;
+        background-color: red;
+        margin: auto;
+        border-radius: 10px;
+        padding: 6px;
+    }
+    div>p{
+            cursor: pointer;
+        }
+        a{
+            color: white;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        #tcont{
+            width:80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap:15px;
+            margin-top: 40px;
+        }
+       #tcont>div{
+        color: white;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        border-radius: 20px;
+       }
+       #tcont>div:hover{
+        
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.995) 0px -12px 30px, rgb(255, 255, 255) 0px 4px 6px, rgb(255, 255, 255) 0px 12px 13px, rgb(255, 255, 255) 0px -3px 5px;
+       }
+        #tcont>div>img{
+            width:100%;
+            
+        }
+        #tcont>div>h1{
+            font-size: 20px;
+            font-family: poppins;
+        }
+        #tcont>div>h1+p{
+            font-size: 12px;
+            font-family: poppins;
+        }
+        #tcont>div>h4{
+            background-color: red;
+            color: white;
+            padding: 5px;
+            border-radius: 10px;
+            font-family: poppins;
+            width: 40%;
+        }
+        
+        #tt{
+            color: white;
+            font-family: poppins;
+            width: 18%;
+            margin: auto;
+            margin-top: 20px;
+            background-color: teal;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        #marq{
+            width:80%;
+            margin: auto;
+            color: white;
+            display: flex;
+            justify-content: space-evenly;
+            gap:20px;
+        }
+        #marq>img{
+            width:100%;
+            height: 200px;
+
+        }
+        #marq>img:hover{
+            /* width:600px;
+            height: 220px; */
+            transform: scale(1.2);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            cursor: pointer;
+        }
+</style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <a href="index.html"><img src="logo.PNG" alt=""></a>
+            <p>TV</p>
+            <p>Movies</p>
+            <p>Sports</p>
+            <p>Disney+</p>
+            <img src="kids.PNG" alt="">
+            <a href="trending.html">Trending</a>
+        </div>
+        <div>
+            <input oninput="debounce(main,2000)" type="text" id="query">
+            <button>Subscribe</button>
+            <p>LOGIN</p>
+
+        </div>
+
+    </div>
+    <div id="slide">
+       
+    </div>
+    <div id="cont">
+      <div id="cont1">
+
+      </div>
+      <div id="cont2">
+       
+      </div>
+    </div>
+    <div id="aaa">
+
+    </div>
+    <h1 id="tt">TRENDING MOVIES</h1>
+  <marquee behavior="" direction="">
+    <div id="marq">
+       
+    </div>
+  </marquee>
+    <div id="tcont">
+
+    </div>
+</body>
+</html>
+<script>
+    var data = JSON.parse(localStorage.getItem("appmovie"))
+
+    function append(){
+       var ran = Math.floor((Math.random() * 10) + 1);
+       var slide = document.getElementById("slide")
+       var cont1 = document.getElementById("cont1")
+       var cont2 = document.getElementById("cont2")
+       var avt1 =  document.createElement("img")
+       avt1.setAttribute("src",data.Poster)
+       var avt =  document.createElement("img")
+       avt.setAttribute("src",data.Poster)
+       slide.append(avt)
+       cont1.append(avt1)
+       var h1 = document.createElement("h1")
+       h1.innerText = data.Title
+       var p = document.createElement("p")
+       p.innerText = `1 hr 54 min . ${data.Year}`
+       var p1 = document.createElement("p")
+       p1.innerText = `Type ${data.Type}`
+       var p2 = document.createElement("p")
+       p2.innerText = `Released Year - ${data.Year}`
+       var h4 = document.createElement("h4")
+       h4.innerText = `IMDB Rating ${ran}`
+       cont2.append(h1,p,p1,p2,h4)
+
+    }
+    append(data)
+
+    // adding trending part work
+   var trendd = JSON.parse(localStorage.getItem("trend"))
+   function trend(data){
+    
+    var tre = document.getElementById("tcont")
+    // console.log(trend)
+    trendd.forEach(function(el){
+     
+       
+        var div = document.createElement("div")
+        var avtar = document.createElement("img")
+        avtar.src = `https://image.tmdb.org/t/p/original/${el.backdrop_path}`
+        var h1 = document.createElement("h1")
+        h1.innerText = el.original_title
+        var p = document.createElement("p")
+        p.innerText = el.overview
+        var p1 = document.createElement("p")
+        p1.innerText = el.release_date
+        var h4 = document.createElement("h4")
+        h4.innerText = `Rating - ${el.vote_average}`
+        if(el.vote_average>8){
+            h4.style.backgroundColor = "green"
+        }
+        var marq = document.getElementById("marq")
+        var avt = document.createElement("img")
+        avt.src = `https://image.tmdb.org/t/p/original/${el.backdrop_path}`
+        marq.append(avt)
+        div.append(avtar,h1,p,p1,h4)
+        tre.append(div)
+      
+    })
+    localStorage.setItem("trend",JSON.stringify(trendd))
+}
+trend()
+</script>
